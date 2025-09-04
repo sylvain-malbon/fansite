@@ -1,5 +1,160 @@
+/* Reset de base */
+
 * {
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+
+/* Base typographique et ambiance */
+body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #fdfaf6; /* ton kraft clair */
+  margin: 0;
+  padding: 0;
+}
+
+/* Titre principal */
+.site-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: #1c1c1c;
+  letter-spacing: 1px;
+}
+
+/* Langues */
+.lang-switcher {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.lang-switcher a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.lang-switcher a.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #7a1f1f;
+  color: #fff;
+}
+
+/* Intro */
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Citation */
+blockquote {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  border-left: 4px solid #7a1f1f;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #444;
+  background-color: #f5f0e6;
+}
+
+/* Image */
+figure {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  filter: grayscale(90%);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Sommaire */
+.sommaire {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sommaire h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sommaire ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+.sommaire a {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+.sommaire a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #eae3d2;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+.reseaux-sociaux a {
+  margin: 0 0.3rem;
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.reseaux-sociaux a:hover {
+  color: #000;
 }

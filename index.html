@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fansite francophone dédié à l'univers littéraire de Ryū Murakami.">
-  <title>Ryū Murakami — Fansite officiel</title>
+  <meta name="description" content="Fansite francophone dédié à Ryū Murakami : œuvres, actualités, événements et vidéos.">
+  <title>Ryū Murakami – Œuvres, actualités et fansite francophone</title>
 
   <!-- Cdnjs Icons -->
 
@@ -15,13 +15,34 @@
 
   <!-- Feuille de style principale -->
   <link rel="stylesheet" href="fansite.css">
+
+    <!-- Favicon en .png plutôt qu'.ico, car plus moderne avec fond transparent -->
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  
+  <!-- balises pour améliorer le partage sur les RS 1/2 -->
+  <!-- Open Graph -->
+
+<meta property="og:title" content="Fansite Ryū Murakami">
+<meta property="og:description" content="Explorez l'univers de Ryū Murakami à travers ses œuvres et actualités.">
+<meta property="og:image" content="https://tonsite.com/images/murakami.jpg">
+<meta property="og:url" content="https://tonsite.com/fr/index.html">
+<meta property="og:type" content="website">
+
+  <!-- balises pour améliorer le partage sur les RS 2/2 -->
+  <!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fansite Ryū Murakami">
+<meta name="twitter:description" content="Explorez l'univers de Ryū Murakami à travers ses œuvres et actualités.">
+<meta name="twitter:image" content="https://tonsite.com/images/murakami.jpg">
+
 </head>
 
 
 <body>
 
  <header>
-    <h1>Ryū Murakami</h1>
+  <!-- Classe pour styliser h1 facilement dans ton CSS ; ici, titre du site : "site-title" -->
+    <h1 class="site-title">Ryū Murakami</h1>
 
      <div class="lang-switcher" aria-label="Choisir la langue">
     <a href="/fr/index.html" hreflang="fr" class="active">FR</a>
@@ -31,7 +52,7 @@
 
     <nav>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="actualites.html">Actualités</a></li>
         <li><a href="oeuvres.html">Œuvres</a></li>
         <li><a href="evenements.html">Événements</a></li>
@@ -43,7 +64,7 @@
     </nav>
   </header>
 
-  <main>
+  <main role="main" id="main-content">
   <section class="intro">
     <h2>Bienvenue sur le fansite dédié à Ryū Murakami</h2>
     <blockquote>
@@ -52,8 +73,7 @@
     </blockquote>
     <p>Romancier, essayiste, réalisateur… Ryū Murakami est une figure incontournable de la littérature japonaise contemporaine. Ce site lui rend hommage à travers ses œuvres, ses idées, et l’impact qu’il a eu sur des générations de lecteurs.</p>
   <figure>
-  <img src="https://images.squarespace-cdn.com/content/v1/57825361440243db4a4b7830/4f2aa68a-cd2c-4563-afb8-05abdc126f22/Japanese-books-best-japanese-books-guide-to-japanese-books-japanese-novel-haruki-murakami-books-like-murakami-harukimurakami-ryomurakami-ryo-murakami-bestjapaneseauhtors-bestbooks?format=1500w" alt="Portrait de Ryū Murakami, écrivain japonais contemporain"
->
+  <img src="https://images.squarespace-cdn.com/content/v1/57825361440243db4a4b7830/4f2aa68a-cd2c-4563-afb8-05abdc126f22/Japanese-books-best-japanese-books-guide-to-japanese-books-japanese-novel-haruki-murakami-books-like-murakami-harukimurakami-ryomurakami-ryo-murakami-bestjapaneseauhtors-bestbooks?format=1500w" alt="Portrait de Ryū Murakami, écrivain japonais contemporain" loading="lazy">
   <figcaption>Ryū Murakami, auteur de Bleu presque transparent et Tokyo Decadence.</figcaption>
   </figure>
   </section>
@@ -139,13 +159,13 @@
     </ul>
   </nav>
   <p>
-  Ce projet a été réalisé dans le cadre du TP "Fansite" et est disponible sur GitHub :<br>
-  <a href="https://github.com/sylvain-malbon/fansite" target="_blank" rel="noopener noreferrer">
+  Ce projet a été réalisé dans le cadre du TP "Fansite".<br>
+  Retrouvez-le sur GitHub :
+  <a href="https://github.com/sylvain-malbon/fansite" target="_blank" rel="noopener noreferrer" title="Voir le projet sur GitHub">
     github.com/sylvain-malbon/fansite
   </a>
-</p>
-
-<p>&copy; 2025 Fansite Ryū Murakami — Projet réalisé par Sylvain Malbon</p>
+  </p>
+  <p>&copy; 2025 Fansite Ryū Murakami — Projet réalisé par Sylvain Malbon</p>
 </footer>
 
 
