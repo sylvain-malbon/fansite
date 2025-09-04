@@ -1,30 +1,23 @@
-/* Reset de base */
+/* === Reset de base === */
 * {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Mode sombre */
-body.dark-mode {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+/* === Typographie et ambiance générale === */
+body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #fdfaf6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
+  padding: 0;
 }
 
-body.dark-mode .site-title,
-body.dark-mode h2,
-body.dark-mode h3 {
-  color: #f5f5f5;
-}
-
-body.dark-mode blockquote,
-body.dark-mode .audio {
-  background-color: #2a2a2a;
-  border-left-color: #7a1f1f;
-  color: #ccc;
-}
-
-/* Bouton de mode sombre */
+/* === Bouton mode sombre === */
 .mode-switcher {
   position: absolute;
   top: 1rem;
@@ -52,19 +45,7 @@ body.dark-mode .audio {
   box-shadow: 0 0 5px #7a1f1f;
 }
 
-/* Base typographique et ambiance */
-body {
-  transition: background-color 0.5s ease, color 0.5s ease;
-  font-family: 'Old Standard TT', serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #2c2c2c;
-  background-color: #fdfaf6; /* ton kraft clair */
-  margin: 0;
-  padding: 0;
-}
-
-/* Titre principal */
+/* === Titre principal === */
 .site-title {
   font-size: 2.5rem;
   text-align: center;
@@ -73,7 +54,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* Langues */
+/* === Sélecteur de langue === */
 .lang-switcher {
   text-align: center;
   margin-bottom: 1rem;
@@ -91,7 +72,7 @@ body {
   color: #000;
 }
 
-/* Navigation */
+/* === Navigation principale === */
 nav ul {
   list-style: none;
   display: flex;
@@ -116,7 +97,7 @@ nav a.active {
   color: #fff;
 }
 
-/* Intro */
+/* === Section intro === */
 .intro {
   max-width: 800px;
   margin: 0 auto;
@@ -129,8 +110,9 @@ nav a.active {
   color: #333;
 }
 
-/* Citation */
-blockquote {
+/* === Citations === */
+blockquote,
+blockquote.musique {
   font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   border-left: 4px solid #7a1f1f;
@@ -140,7 +122,7 @@ blockquote {
   background-color: #f5f0e6;
 }
 
-/* Image */
+/* === Images === */
 figure {
   text-align: center;
   margin: 2rem 0;
@@ -159,7 +141,7 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-/* Sommaire */
+/* === Sommaire === */
 .sommaire {
   max-width: 800px;
   margin: 0 auto;
@@ -183,20 +165,32 @@ figcaption {
 
 .sommaire a:hover {
   text-decoration: underline;
+  color: #7a1f1f;
 }
 
-/* Citation musique */
-blockquote.musique {
-  font-family: 'Courier New', monospace;
-  font-size: 1.1rem;
-  border-left: 4px solid #7a1f1f;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  color: #444;
+/* === Section musique === */
+.musique-intro {
+  animation: fadeIn 1.5s ease-out;
   background-color: #f5f0e6;
+  padding: 2rem;
+  border-left: 4px solid #7a1f1f;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Audio player design */
+/* === Audio player === */
+.audio {
+  animation: fadeIn 1.5s ease-out;
+  background-color: #f5f0e6;
+  padding: 2rem;
+  border-left: 4px solid #7a1f1f;
+  margin: 2rem auto;
+  max-width: 800px;
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
 .audio-icon {
   margin-right: 0.5rem;
   color: #7a1f1f;
@@ -211,22 +205,7 @@ audio {
   border-radius: 4px;
 }
 
-.audio {
-  animation: fadeIn 1.5s ease-out;
-  background-color: #f5f0e6;
-  padding: 2rem;
-  border-left: 4px solid #7a1f1f;
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-
-.audio a:hover,
-.sommaire a:hover {
-  color: #7a1f1f;
-  text-decoration: underline;
-}
-
+/* === Animation === */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -238,7 +217,7 @@ audio {
   }
 }
 
-/* Footer */
+/* === Footer === */
 footer {
   background-color: #eae3d2;
   padding: 2rem 1rem;
@@ -259,7 +238,7 @@ footer {
   color: #000;
 }
 
-/* Responsive pour les mobiles */
+/* === Responsive mobile === */
 @media (max-width: 480px) {
   body {
     font-size: 16px;
@@ -271,7 +250,8 @@ footer {
 
   .intro,
   .sommaire,
-  .audio {
+  .audio,
+  .musique-intro {
     padding: 1rem;
   }
 
@@ -290,4 +270,23 @@ footer {
   }
 }
 
-/* Fin du fichier CSS */
+/* === Mode sombre === */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .site-title,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f5f5f5;
+}
+
+body.dark-mode blockquote,
+body.dark-mode .audio,
+body.dark-mode .musique-intro {
+  background-color: #2a2a2a;
+  border-left-color: #7a1f1f;
+  color: #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
