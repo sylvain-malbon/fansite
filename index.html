@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
 
   <!-- Feuille de style principale -->
-  <link rel="stylesheet" href="fansite.css">
+  <link rel="stylesheet" href="assets/fansite.css">
 
     <!-- Favicon en .png plutôt qu'.ico, car plus moderne avec fond transparent -->
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -41,6 +41,14 @@
 <body>
 
  <header>
+
+  <!-- Bouton pour basculer entre mode clair/sombre -->
+  <div class="mode-switcher">
+  <button id="toggle-dark" aria-label="Activer le mode nuit">
+    <i class="fas fa-moon"></i>
+  </button>
+</div>
+
   <!-- Classe pour styliser h1 facilement dans ton CSS ; ici, titre du site : "site-title" -->
     <h1 class="site-title">Ryū Murakami</h1>
 
@@ -89,7 +97,24 @@
     <li><a href="contact.html">Un formulaire pour nous contacter</a></li>
   </ul>
   </section>
-    </main>
+
+  <!-- fin de .sommaire / Suggestion d'ambiance musicale -->
+
+<hr>
+<p style="text-align:center; font-style:italic; color:#777;">Pour prolonger l’atmosphère…</p>
+
+<blockquote class="musique">
+  <p>« Le jazz, c’est ce qui me permet de respirer entre deux silences. »</p>
+  <cite>— Ryū Murakami (inspiré de ses entretiens)</cite>
+</blockquote>
+
+<section class="audio">
+<h3><i class="fas fa-music audio-icon" aria-hidden="true"></i>Ambiance musicale</h3>
+  <p>Écoutez une sélection jazz & rock inspirée de l’univers de Ryū Murakami :</p>
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXbITWG1ZJKYt?utm_source=generator" width="100%" height="380" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</section>
+
+</main>
 
 <footer>
 <aside class="reseaux-sociaux" aria-label="Réseaux sociaux">

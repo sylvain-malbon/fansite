@@ -1,13 +1,60 @@
 /* Reset de base */
-
 * {
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
+/* Mode sombre */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .site-title,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f5f5f5;
+}
+
+body.dark-mode blockquote,
+body.dark-mode .audio {
+  background-color: #2a2a2a;
+  border-left-color: #7a1f1f;
+  color: #ccc;
+}
+
+/* Bouton de mode sombre */
+.mode-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#toggle-dark {
+  background-color: transparent;
+  border: 1px solid #7a1f1f;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: #7a1f1f;
+  cursor: default;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#toggle-dark:hover {
+  color: #5a0f0f;
+  border-color: #5a0f0f;
+}
+
+#toggle-dark:focus {
+  outline: none;
+  box-shadow: 0 0 5px #7a1f1f;
+}
+
 /* Base typographique et ambiance */
 body {
+  transition: background-color 0.5s ease, color 0.5s ease;
   font-family: 'Old Standard TT', serif;
   font-size: 18px;
   line-height: 1.6;
@@ -138,6 +185,59 @@ figcaption {
   text-decoration: underline;
 }
 
+/* Citation musique */
+blockquote.musique {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  border-left: 4px solid #7a1f1f;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #444;
+  background-color: #f5f0e6;
+}
+
+/* Audio player design */
+.audio-icon {
+  margin-right: 0.5rem;
+  color: #7a1f1f;
+}
+
+audio {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.audio {
+  animation: fadeIn 1.5s ease-out;
+  background-color: #f5f0e6;
+  padding: 2rem;
+  border-left: 4px solid #7a1f1f;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+
+.audio a:hover,
+.sommaire a:hover {
+  color: #7a1f1f;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Footer */
 footer {
   background-color: #eae3d2;
@@ -158,3 +258,36 @@ footer {
 .reseaux-sociaux a:hover {
   color: #000;
 }
+
+/* Responsive pour les mobiles */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .intro,
+  .sommaire,
+  .audio {
+    padding: 1rem;
+  }
+
+  .reseaux-sociaux a {
+    font-size: 1rem;
+  }
+
+  .mode-switcher {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  #toggle-dark {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}
+
+/* Fin du fichier CSS */
