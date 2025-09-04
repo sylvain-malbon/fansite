@@ -1,3 +1,6 @@
+/* === Import typographie brute === */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /* === Reset de base === */
 * {
   margin: 0;
@@ -10,17 +13,18 @@ body {
   font-family: 'Old Standard TT', serif;
   font-size: 18px;
   line-height: 1.7;
-  color: #2c2c2c;
-  background-color: #fcf9f3;
+  color: #1e1e1e;
+  background-color: white;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* === Titre principal === */
 .site-title {
+  font-family: 'Share Tech Mono', monospace;
   font-size: 2.8rem;
   text-align: center;
   margin: 2rem 0 0.5rem;
-  color: #1a1a1a;
+  color: #111;
   letter-spacing: 1px;
   animation: fadeIn 1s ease-out;
 }
@@ -28,7 +32,7 @@ body {
 /* === Sous-titre === */
 .sous-titre {
   font-style: italic;
-  color: #555;
+  color: #444;
   text-align: center;
   display: block;
   margin: 0 0 1.5rem;
@@ -55,7 +59,7 @@ body {
 .lang-switcher a {
   margin: 0 0.5rem;
   text-decoration: none;
-  color: #555;
+  color: #444;
   font-size: 0.9rem;
   transition: color 0.3s ease;
 }
@@ -80,13 +84,14 @@ nav ul {
 }
 
 nav a {
-  background-color: #eae3d2;
+  background-color: #d9d9d9;
   text-decoration: none;
-  color: #2c2c2c;
+  color: #1e1e1e;
   padding: 0.5rem 1.2rem;
-  border-radius: 0px;
+  border-radius: 0;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-family: 'Share Tech Mono', monospace;
 }
 
 nav a.active {
@@ -97,7 +102,7 @@ nav a.active {
 nav a:hover {
   background-color: #7a1f1f;
   color: white;
-  transform: scale(1.05);
+  animation: glitch 0.3s ease;
 }
 
 nav a:active {
@@ -112,21 +117,22 @@ nav a:active {
 }
 
 .intro h2 {
+  font-family: 'Share Tech Mono', monospace;
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #222;
 }
 
 /* === Citations === */
 blockquote {
-  font-family: 'Courier New', monospace;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 1.1rem;
-  border-left: 4px solid #7a1f1f;
+  border-left: 6px solid #7a1f1f;
   padding-left: 1rem;
   margin: 2rem 0;
-  color: #444;
-  background-color: #f5f0e6;
-  border-radius: 0px;
+  color: #2c2c2c;
+  background-color: #e0dcd6;
+  border-radius: 0;
 }
 
 blockquote p {
@@ -176,6 +182,7 @@ figcaption {
 .sommaire h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .sommaire ul {
@@ -216,18 +223,6 @@ audio {
   border: 1px solid #ccc;
   border-radius: 12px;
   background-color: #fff;
-}
-
-/* === Animation === */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* === Footer === */
@@ -290,4 +285,24 @@ footer {
     width: 36px;
     height: 36px;
   }
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
 }

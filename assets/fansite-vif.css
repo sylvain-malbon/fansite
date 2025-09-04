@@ -1,26 +1,43 @@
-/* === Reset de base === */
+/* === Import typographies === */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&display=swap');
+
+/* === Variables === */
+:root {
+  --fond: #ffffff;
+  --texte: #1e1e1e;
+  --rouge: #c21807;
+  --violet: #6a1b9a;
+  --hover-violet: #8e24aa;
+  --gris: #444;
+  --clair: #f5f5f5;
+  --radius: 0;
+  --transition: 0.3s ease;
+}
+
+/* === Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === Typographie et ambiance générale === */
+/* === Corps === */
 body {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 18px;
   line-height: 1.7;
-  color: #2c2c2c;
-  background-color: #fcf9f3;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  color: var(--texte);
+  background-color: var(--fond);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 /* === Titre principal === */
 .site-title {
-  font-size: 2.8rem;
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
   text-align: center;
   margin: 2rem 0 0.5rem;
-  color: #1a1a1a;
+  color: var(--rouge);
   letter-spacing: 1px;
   animation: fadeIn 1s ease-out;
 }
@@ -28,10 +45,9 @@ body {
 /* === Sous-titre === */
 .sous-titre {
   font-style: italic;
-  color: #555;
+  color: var(--gris);
   text-align: center;
-  display: block;
-  margin: 0 0 1.5rem;
+  margin-bottom: 1.5rem;
   animation: fadeIn 1s ease-out 0.3s;
   animation-fill-mode: both;
 }
@@ -41,7 +57,7 @@ body {
   display: block;
   width: 60px;
   height: 2px;
-  background-color: #7a1f1f;
+  background-color: var(--violet);
   margin: 0.8rem auto 0;
   opacity: 0.6;
 }
@@ -55,21 +71,21 @@ body {
 .lang-switcher a {
   margin: 0 0.5rem;
   text-decoration: none;
-  color: #555;
+  color: var(--gris);
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
 .lang-switcher a.active {
   font-weight: bold;
-  color: #000;
+  color: var(--texte);
 }
 
 .lang-switcher a:hover {
-  color: #7a1f1f;
+  color: var(--violet);
 }
 
-/* === Navigation principale === */
+/* === Navigation === */
 nav ul {
   list-style: none;
   display: flex;
@@ -80,23 +96,24 @@ nav ul {
 }
 
 nav a {
-  background-color: #eae3d2;
+  background-color: var(--clair);
+  color: var(--texte);
   text-decoration: none;
-  color: #2c2c2c;
-  padding: 0.5rem 1.2rem;
-  border-radius: 0px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius);
+  font-family: 'Anton', sans-serif;
+  transition: background-color var(--transition), color var(--transition), transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 nav a.active {
-  background-color: #7a1f1f;
-  color: white;
+  background-color: var(--rouge);
+  color: #fff;
 }
 
 nav a:hover {
-  background-color: #7a1f1f;
-  color: white;
+  background-color: var(--hover-violet);
+  color: #fff;
   transform: scale(1.05);
 }
 
@@ -112,25 +129,22 @@ nav a:active {
 }
 
 .intro h2 {
-  font-size: 1.8rem;
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--violet);
 }
 
 /* === Citations === */
 blockquote {
-  font-family: 'Courier New', monospace;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 1.1rem;
-  border-left: 4px solid #7a1f1f;
+  border-left: 6px solid var(--rouge);
   padding-left: 1rem;
   margin: 2rem 0;
-  color: #444;
-  background-color: #f5f0e6;
-  border-radius: 0px;
-}
-
-blockquote p {
-  margin-bottom: 0.5rem;
+  background-color: #f8f6f9;
+  color: var(--texte);
+  border-radius: var(--radius);
 }
 
 blockquote cite {
@@ -152,7 +166,7 @@ figure img {
   border: 1px solid #ccc;
   border-radius: 16px;
   filter: grayscale(90%);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition: filter var(--transition), transform var(--transition);
 }
 
 figure img:hover {
@@ -174,8 +188,10 @@ figcaption {
 }
 
 .sommaire h3 {
+  font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--rouge);
 }
 
 .sommaire ul {
@@ -184,16 +200,16 @@ figcaption {
 }
 
 .sommaire a {
-  color: #2c2c2c;
+  color: var(--texte);
   text-decoration: none;
 }
 
 .sommaire a:hover {
   text-decoration: underline;
-  color: #7a1f1f;
+  color: var(--violet);
 }
 
-/* === Iframe Spotify === */
+/* === Spotify === */
 iframe[src*="spotify"] {
   display: block;
   margin: 1rem auto;
@@ -202,10 +218,10 @@ iframe[src*="spotify"] {
   border-radius: 12px;
 }
 
-/* === Audio player icon === */
+/* === Audio === */
 .audio-icon {
   margin-right: 0.5rem;
-  color: #7a1f1f;
+  color: var(--rouge);
 }
 
 audio {
@@ -218,25 +234,13 @@ audio {
   background-color: #fff;
 }
 
-/* === Animation === */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* === Footer === */
 footer {
-  background-color: #eae3d2;
+  background-color: var(--clair);
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--gris);
   border-top: 1px solid #ccc;
 }
 
@@ -257,19 +261,19 @@ footer {
   width: 40px;
   height: 40px;
   font-size: 1.5rem;
-  color: #555;
-  background-color: #f5f0e6;
+  color: var(--gris);
+  background-color: var(--clair);
   border-radius: 50%;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: background-color var(--transition), color var(--transition), transform 0.2s ease;
 }
 
 .reseaux-sociaux a:hover {
-  background-color: #7a1f1f;
+  background-color: var(--rouge);
   color: #fff;
   transform: scale(1.1);
 }
 
-/* === Responsive mobile === */
+/* === Responsive === */
 @media (max-width: 480px) {
   body {
     font-size: 16px;
@@ -290,4 +294,24 @@ footer {
     width: 36px;
     height: 36px;
   }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
 }
