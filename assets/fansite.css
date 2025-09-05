@@ -1,5 +1,5 @@
 /* === Reset de base === */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 /* === Typographie et ambiance générale === */
 body {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Old Standard TT', Georgia, serif;
   font-size: 18px;
   line-height: 1.7;
   color: #2c2c2c;
@@ -20,9 +20,10 @@ body {
   font-size: 2.8rem;
   text-align: center;
   margin: 2rem 0 0.5rem;
-  color: #1a1a1a;
+  color: #7a1f1f;
   letter-spacing: 1px;
   animation: fadeIn 1s ease-out;
+  animation-fill-mode: both;
 }
 
 /* === Sous-titre === */
@@ -84,9 +85,9 @@ nav a {
   text-decoration: none;
   color: #2c2c2c;
   padding: 0.5rem 1.2rem;
-  border-radius: 0px;
+  border-radius: 0;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 nav a.active {
@@ -102,6 +103,11 @@ nav a:hover {
 
 nav a:active {
   transform: scale(0.97);
+}
+
+nav a:focus {
+  outline: 2px dashed #7a1f1f;
+  outline-offset: 4px;
 }
 
 /* === Section intro === */
@@ -126,7 +132,7 @@ blockquote {
   margin: 2rem 0;
   color: #444;
   background-color: #f5f0e6;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 blockquote p {
@@ -158,6 +164,7 @@ figure img {
 figure img:hover {
   filter: grayscale(0%);
   transform: scale(1.02);
+  box-shadow: 0 0 16px rgba(122, 31, 31, 0.5);
 }
 
 figcaption {
@@ -194,15 +201,29 @@ figcaption {
 }
 
 /* === Iframe Spotify === */
-iframe[src*="spotify"] {
-  display: block;
-  margin: 1rem auto;
-  width: 66%;
+.spotify-wrapper {
+  background-color: #f5f0e6;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(234, 227, 210, 0.8);
   max-width: 600px;
+  margin: 2rem auto;
+  transition: box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.spotify-wrapper:hover {
+  box-shadow: 0 0 16px rgba(122, 31, 31, 0.4);
+}
+
+.spotify-wrapper iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
   border-radius: 12px;
 }
 
-/* === Audio player icon === */
+/* === Audio icon === */
 .audio-icon {
   margin-right: 0.5rem;
   color: #7a1f1f;
@@ -232,7 +253,7 @@ audio {
 
 /* === Footer === */
 footer {
-  background-color: #eae3d2;
+  background-color: #f5f0e6;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
@@ -240,7 +261,46 @@ footer {
   border-top: 1px solid #ccc;
 }
 
+.footer-info {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.footer-info a {
+  color: #7a1f1f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+/* === Liste des réseaux sociaux === */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-list li {
+  display: inline-flex;
+}
+
 /* === Réseaux sociaux === */
+.reseaux-sociaux a,
+.reseaux-sociaux a i,
+.reseaux-sociaux a span {
+  text-decoration: none;
+}
+
 .reseaux-sociaux {
   display: flex;
   flex-wrap: wrap;
@@ -258,7 +318,7 @@ footer {
   height: 40px;
   font-size: 1.5rem;
   color: #555;
-  background-color: #f5f0e6;
+  background-color: #fff;
   border-radius: 50%;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
@@ -267,6 +327,12 @@ footer {
   background-color: #7a1f1f;
   color: #fff;
   transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.reseaux-sociaux a:focus {
+  outline: 2px dashed #7a1f1f;
+  outline-offset: 4px;
 }
 
 /* === Responsive mobile === */
@@ -277,17 +343,3 @@ footer {
 
   .site-title {
     font-size: 2rem;
-  }
-
-  .intro,
-  .sommaire,
-  .audio {
-    padding: 1rem;
-  }
-
-  .reseaux-sociaux a {
-    font-size: 1.2rem;
-    width: 36px;
-    height: 36px;
-  }
-}
