@@ -327,5 +327,13 @@ footer {
   text-decoration: underline;
 }
 
-/* === Responsive === */
-@media (max-width
+/* === Responsive mobile === */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-title {
+    font-size: 2rem;
+  }
+}
