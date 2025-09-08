@@ -151,18 +151,22 @@ nav a {
   border-radius: 0;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0;
 }
 
 nav a.active {
+  outline: 0.8px solid #7a1f1f;
+  outline-offset: 1.8px;
   background-color: #7a1f1f;
   color: white;
   border-radius: 0 1rem 0 0;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-radius 0.6s ease;
 }
 
 nav a:hover {
   background-color: #7a1f1f;
   color: white;
+  border-radius: 0 1rem 0 0;
   transform: scale(1.05);
 }
 
@@ -171,8 +175,8 @@ nav a:active {
 }
 
 nav a:focus {
-  outline: 2px dashed #7a1f1f;
-  outline-offset: 4px;
+  outline: 0.8px solid #7a1f1f;
+  outline-offset: 1.8px;
 }
 
 /* === Section intro === */
@@ -314,6 +318,23 @@ audio {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Animation pour arrondir progressivement les coins */
+@keyframes arrondiHarmonise {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    border-radius: 0 1rem 0 0;
+  }
+}
+
+nav a:hover {
+  animation: arrondiHarmonise 0.6s ease forwards;
+  background-color: #7a1f1f;
+  color: white;
+  transform: scale(1.05);
 }
 
 /* === Footer === */
