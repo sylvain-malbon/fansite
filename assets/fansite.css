@@ -745,8 +745,10 @@ footer {
 }
 
 .reseaux-sociaux a:focus {
-  outline: 2px dashed #7a1f1f;
-  outline-offset: 4px;
+  outline: 1.3px solid #fff;
+  outline-offset: 0px;
+  outline: 0.7px solid grey;
+  outline-offset: 1.3px;
 }
 
 /* === Responsive mobile === */
